@@ -6,13 +6,13 @@ body{
 }
 
 
-h1.wp-block-post-title {
+h1 {
   position: relative;
-  text-align: center;
+  text-align: center !important;
   margin-bottom: 10px;
 }
 
-h1.wp-block-post-title::after {
+h1::after {
   content: '';
   position: absolute;
   bottom: -10px;
