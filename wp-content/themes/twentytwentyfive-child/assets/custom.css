@@ -6,5 +6,79 @@ body{
 }
 
 
+h1 {
+  position: relative;
+  text-align: center !important;
+  margin-bottom: 10px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40%;
+  transform-origin: center;
+  border-bottom: 1px solid #000;
+  animation: growShrinkLine 2s ease-in-out forwards;
+  /* 'forwards' ensures animation stays at last keyframe */
+}
+
+
+h1::before {
+    content:'';
+    position: absolute;
+    width: 42.5%;
+    height: 30px;
+    animation: growShrinkLine 2s ease-in-out forwards;
+    background-image: url(http://localhost/rnd/wp-content/uploads/2025/08/right-arrow-svgrepo-com.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    bottom: -24.5px;
+}
+
+@keyframes growShrinkLine {
+  0% {
+    left: 0%;
+    transform: translateX(0%);
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* link animation */
+
+.wp-site-blocks a{
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    color:var(--matblack) !important;
+    font-weight: 600;
+}
+
+.wp-site-blocks a:hover{
+    text-decoration: none;
+}
+
+.wp-site-blocks a:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    transform-origin: center;
+    border-bottom: 1px solid #000;
+    transition: width 0.5s ease-in-out;
+}
+
+.wp-site-blocks a:hover::after {
+    width:100%;
+}
+
+/* link animation end */
 
 
