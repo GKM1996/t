@@ -5,6 +5,11 @@ body{
     --white: #faf0e6;
 }
 
+a{
+  display: inline-block !important;
+}
+
+
 h1 {
   position: relative;
   text-align: center !important;
@@ -51,12 +56,14 @@ h1::before {
 
 /* link animation */
 
+
 .wp-site-blocks a{
     position: relative;
     text-decoration: none;
     cursor: pointer;
     color:var(--matblack) !important;
     font-weight: 600;
+  
 }
 
 .wp-site-blocks a:hover{
@@ -85,6 +92,19 @@ h1::before {
 .custom-filter-data-wrapper {
     opacity: 0;
     transition: opacity 4s ease-in-out; 
-  } 
+} 
 
 /* Scroll aniimation end */   
+
+
+
+/* post filer css start */
+
+.custom-filter-data-wrapper .post-card{
+  margin:10px 0; 
+}
+.custom-filter-data-wrapper h3{
+  margin: 0 auto;
+}
+
+/* post filter css end */

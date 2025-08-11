@@ -78,10 +78,12 @@ function wp_post_filter_shortcode() {
 
           if ($query->have_posts()) :
               while ($query->have_posts()): $query->the_post();
+                echo '<a href="' . get_permalink() . '" class="post-link" class="post-card">';
                   echo '<h3>' . get_the_title() . '</h3>';
                   echo '<p>' . get_the_excerpt() . '</p>';
+                echo '</a>';  
               endwhile;
-          else:
+          else: 
               echo '<p>No posts found.</p>';
           endif;
           wp_reset_postdata();
