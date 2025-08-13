@@ -100,11 +100,118 @@ h1::before {
 
 /* post filer css start */
 
+.btn-container::after{
+  content: unset !important;
+}
+
 .custom-filter-data-wrapper .post-card{
   margin:10px 0; 
+  padding: 10px;
 }
 .custom-filter-data-wrapper h3{
   margin: 0 auto;
 }
 
 /* post filter css end */
+
+
+/* buttton animation start */
+
+.btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 18px;
+  background-color: #222;
+  color: white;
+  border: none;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Border lines */
+.border-line {
+  position: absolute;
+  background-color: #00f2ff;
+  z-index: 0;
+  transition: all 0.5s linear;
+  opacity: 1;
+  z-index: 999;
+}
+
+/* Top */
+.border-line.top {
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+}
+
+/* Right */
+.border-line.right {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0%;
+}
+
+/* Bottom */
+.border-line.bottom {
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0%;
+}
+
+/* Left */
+.border-line.left {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0%;
+}
+
+/* HOVER STATES – animate in sequence using delays */
+.btn-container:hover .top {
+  width: 100%;
+  transition-delay: 0s;
+}
+
+.btn-container:hover .right {
+  height: 100%;
+  transition-delay: 0.5s;
+}
+
+.btn-container:hover .bottom {
+  width: 100%;
+  transition-delay: 1s;
+}
+
+.btn-container:hover .left {
+  height: 100%;
+  transition-delay: 1.5s;
+}
+
+/* REVERSE on hover out – same delays in reverse order */
+.btn-container .top {
+  transition-delay: 1.5s;
+}
+
+.btn-container .right {
+  transition-delay: 1s;
+}
+
+.btn-container .bottom {
+  transition-delay: 0.5s;
+}
+
+.btn-container .left {
+  transition-delay: 0s;
+}
+
+/* button animation end */

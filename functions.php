@@ -17,6 +17,17 @@ add_action( 'wp_enqueue_scripts', function() {
         '1.0',           // version
         true             // load in footer
     );
+
+
+    // ada code 
+     wp_enqueue_script( 
+        'twentytwentyfive-ada-js', 
+        get_theme_file_uri() . '/assets/js/ada.js', 
+        array('jquery'), // dependency (if needed)
+        '1.0',           // version
+        true             // load in footer
+    );
+
     
 } );
 
@@ -78,7 +89,13 @@ function wp_post_filter_shortcode() {
 
           if ($query->have_posts()) :
               while ($query->have_posts()): $query->the_post();
-                echo '<a href="' . get_permalink() . '" class="post-link" class="post-card">';
+                echo '<a href="' . get_permalink() . '" class="post-card btn-container">';
+                // for animation 
+                echo "<span class='border-line top'></span>";
+                echo "<span class='border-line right'></span>";
+                echo "<span class='border-line bottom'></span>";
+                echo "<span class='border-line left'></span>";
+                // for animation end
                   echo '<h3>' . get_the_title() . '</h3>';
                   echo '<p>' . get_the_excerpt() . '</p>';
                 echo '</a>';  
